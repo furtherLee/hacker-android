@@ -15,4 +15,8 @@ public class Configure {
 		return (Integer)config.get("user.id");
 	}
 	
+	public static String getHostUrl() {
+		return "http://59.78.28.44/~mhwang/hacker/";
+	}
+	
 }

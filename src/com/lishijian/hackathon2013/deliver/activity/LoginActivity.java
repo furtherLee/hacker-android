@@ -120,7 +120,7 @@ public class LoginActivity extends Activity {
 			mPasswordView.setError(getString(R.string.error_field_required));
 			focusView = mPasswordView;
 			cancel = true;
-		} else if (mPassword.length() < 4) {
+		} else if (mPassword.length() < 1) {
 			mPasswordView.setError(getString(R.string.error_invalid_password));
 			focusView = mPasswordView;
 			cancel = true;
@@ -200,13 +200,7 @@ public class LoginActivity extends Activity {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 			IDeliverService service = ServiceFactory.buildService();
-			try {
-				mId = service.login(mEmail, mPassword);
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				return false;
-			}
-
+			mId = service.login(mEmail, mPassword);
 			return mId != -1;
 		}
 

@@ -8,4 +8,6 @@
     <string name="title_activity_order_detail">订单信息</string>
 
     <string name="menu_pull">获取新订单</string>
+    <string name="menu_sent">送出</string>
+    <string name="menu_cancel">取消</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.lishijian.hackathon2013.deliver.entity;
 
+import java.util.List;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,14 +13,17 @@ public class Order extends Binder implements Parcelable {
 
 	public static final int PENDING = 0, SENT = 1, CANCELED = 2;
 	
+	public static List<Order> CurrentOrders;
+	
 	public static Order fromJson(JSONObject json) throws JSONException {
 		Order order = new Order();
 		order.id = json.getInt("id");
 		order.gid = json.getInt("gid");
-		order.eaterName = json.getString("eaterName");
+		order.eaterName = json.getString("name");
 		order.time = json.getString("time");
 		order.desp = json.getString("description");
 		order.address = json.getString("address");
+		order.phone = json.getString("phone");
 		String status = json.getString("status");
 		
 		if (status.trim().equalsIgnoreCase("sent"))
@@ -45,8 +50,7 @@ public class Order extends Binder implements Parcelable {
 	
 	public int status;
 	
-	private Order() {
-	}
+	public String phone;
 	
 	@Override
 	public int describeContents() {
