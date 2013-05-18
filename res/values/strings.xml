@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">递送哥</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_group_detail">外卖单</string>
+    <string name="title_activity_order_detail">订单信息</string>
+
+    <string name="menu_pull">获取新订单</string>
+</resources>

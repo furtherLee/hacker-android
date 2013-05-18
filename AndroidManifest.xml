@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lishijian.hackathon2013.deliver"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.lishijian.hackathon2013.deliver.activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lishijian.hackathon2013.deliver.activity.OrdersActivity"
+            android:label="@string/title_activity_group_detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.lishijian.hackathon2013.deliver.activity.OrderDetailActivity"
+            android:label="@string/title_activity_order_detail"
+            android:parentActivityName="com.lishijian.hackathon2013.deliver.activity.OrdersActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lishijian.hackathon2013.deliver.activity.OrdersActivity" />
+        </activity>
+    </application>
+
+</manifest>
