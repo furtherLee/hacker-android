@@ -1,5 +1,8 @@
 package com.lishijian.hackathon2013.deliver.entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.json.JSONException;
@@ -15,16 +18,19 @@ public class Order extends Binder implements Parcelable {
 	
 	public static List<Order> CurrentOrders;
 	
-	public static Order fromJson(JSONObject json) throws JSONException {
+	public static Order fromJson(JSONObject json) throws JSONException, ParseException {
 		Order order = new Order();
 		order.id = json.getInt("id");
 		order.gid = json.getInt("gid");
 		order.eaterName = json.getString("name");
-		order.time = json.getString("time");
 		order.desp = json.getString("description");
 		order.address = json.getString("address");
 		order.phone = json.getString("phone");
 		String status = json.getString("status");
+		
+		Long timePassed = Long.parseLong(json.getString("time"));
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
+		order.time = sdf.format(new Date(timePassed * 1000));
 		
 		if (status.trim().equalsIgnoreCase("sent"))
 			order.status = SENT;

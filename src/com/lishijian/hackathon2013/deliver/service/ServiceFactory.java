@@ -6,7 +6,7 @@ public class ServiceFactory {
 	
 	public synchronized static IDeliverService buildService() {
 		if (instance == null)
-			instance = new LocalDeliverService();
+			instance = new InternetDeliverService();
 		return instance;
 	}
 }
