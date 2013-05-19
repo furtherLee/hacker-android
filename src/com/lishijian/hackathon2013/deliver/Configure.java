@@ -16,8 +16,8 @@ public class Configure {
 	}
 	
 	public static String getHostUrl() {
-		return "http://59.78.28.44/~mhwang/hacker/";
-		// return "http://59.78.28.99/hackthon/";
+//		return "http://59.78.28.44/~mhwang/hacker/";
+		 return "http://59.78.28.99/hackthon/";
 	}
 	
 }

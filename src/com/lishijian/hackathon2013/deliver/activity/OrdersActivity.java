@@ -60,6 +60,7 @@ public class OrdersActivity extends ListActivity {
 		List<Order> newOrders = mService.pullOrders();
 		if (newOrders != null) {
 			if (newOrders.isEmpty() || newOrders.get(0).gid == mGroupId) {
+				mOrdersAdapter.changed();
 				mToast.setText("辛苦啦！没有新订单，休息会吧～");
 				mToast.show();
 				return;

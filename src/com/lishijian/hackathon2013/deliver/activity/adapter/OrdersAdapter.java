@@ -74,8 +74,14 @@ public class OrdersAdapter implements ListAdapter {
 		phoneView.setText(order.phone);
 		addressView.setText(order.address);
 		
-		if (order.status == Order.SENT)
+		if (order.status == Order.SENT) {
 			imgView.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_sent));
+			imgView.setVisibility(View.VISIBLE);
+		}
+		else {
+			imgView.setVisibility(View.GONE);
+		}
+			
 		
 		return convertView;
 	}
